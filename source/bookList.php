@@ -76,7 +76,6 @@ else{
         </article>
         </a>
         <?php endforeach; ?>
-        <a href="formAddBook.php">Ajoutez un livre</a>
     </section>
     
 </body>

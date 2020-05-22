@@ -18,6 +18,10 @@
                     </a></li>
                 <li><a href="bookList.php">Tous nos livres</a></li>
                 <?php
+                    if($_SESSION['niveauAcces'] == 2){
+                        echo('<li><a href="formAddBook.php">Espace Aministration</a></li>');
+                    }
+
                     if(isset($_SESSION['id']) AND isset($_SESSION['username'])){
                         echo('<li><a href="deconnexion.php">Déconnexion</a></li>');
                     }

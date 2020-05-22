@@ -29,7 +29,8 @@ $username = $_POST['username'];
 $logInfoQuery = '
 SELECT id,
 nomUtilisateur,
-motDePasse
+motDePasse,
+niveauAcces
 FROM Membre
 WHERE nomUtilisateur = "'.$username.'"
 ';
@@ -47,6 +48,7 @@ else{
         session_start();
         $_SESSION['id'] = $logInfo['id'];
         $_SESSION['username'] = $username;
+        $_SESSION['niveauAcces'] = $logInfo['niveauAcces'];
         echo "Vous êtes connecté. Bonjour ".$_SESSION['username'];
     }
     else{
