@@ -19,7 +19,8 @@
                 <li><a href="bookList.php">Tous nos livres</a></li>
                 <?php
                     if($_SESSION['niveauAcces'] == 2){
-                        echo('<li><a href="formAddBook.php">Espace Aministration</a></li>');
+                        echo('<li><a href="gestionMembre.php">Gestion des membres</a></li>');
+                        echo('<li><a href="formAddBook.php">Ajout de contenu</a></li>');
                     }
 
                     if(isset($_SESSION['id']) AND isset($_SESSION['username'])){
