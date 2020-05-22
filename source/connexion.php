@@ -45,7 +45,6 @@ if(!$logInfo){
 }
 else{
     if($isPasswordCorrect){
-        session_start();
         $_SESSION['id'] = $logInfo['id'];
         $_SESSION['username'] = $username;
         $_SESSION['niveauAcces'] = $logInfo['niveauAcces'];

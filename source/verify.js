@@ -53,3 +53,14 @@ function valider(){
     }
 
 }
+
+function passwordVerif(){
+    var password = document.forms["inscription"]["motDePasse"].value;
+    var confirmation = document.forms["inscription"]["confirmer"].value;
+    if(password == confirmation){
+        return true;
+    }
+    else{
+        return false
+    }
+}
