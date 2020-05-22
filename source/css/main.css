@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #E55E55;
+    display: flex;
+    width: 100%;
+}
+
+nav {
+    margin-left: 10%;
+}
+
+nav>ul {
+    margin: auto;
+}
+
+nav>ul>li {
+    list-style: none;
+    display:inline-block;
+    font-weight: bold;
+    padding: 20px;
+    width: auto;
+    margin-left:auto;
+}
+
+nav > ul > li > a {
+    font-size: 40px;
+    color: white;
+    text-decoration: none; 
+}
+
+nav > ul > li > a:visited {
+    font-size: 40px;
+    color: white;
+}
