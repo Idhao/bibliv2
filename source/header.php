@@ -24,6 +24,7 @@
                     }
 
                     if(isset($_SESSION['id']) AND isset($_SESSION['username'])){
+                        echo('<li><a href="panier.php">Mon panier</a></li>');
                         echo('<li><a href="deconnexion.php">Déconnexion</a></li>');
                     }
                     else{

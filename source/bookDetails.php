@@ -62,5 +62,31 @@
             <?php endforeach;?>
         </article>
     </section>
+    <?php
+    echo('<a href="bookDetails.php?isbn='.$isbn.'&action=ajout">Ajouter au panier</a>');
+if (isset($_GET['isbn']) && isset($_GET['action'])) {
+    echo $_GET['isbn'] . "<br>"; 
+    //Verifie que le panier existe
+    if (!isset($_SESSION['panier'])) {
+        //creer la variable de session panier
+        $_SESSION['panier'] = array();
+    }
+    //ajouter le produit au panier
+    //Si produit présent dans le panier
+    if (isset($_SESSION['panier'][$_GET['isbn']])) {
+        $_SESSION['panier'][$_GET['isbn']]++;
+    } else {
+        //si le produit n'est pas présent
+        $_SESSION['panier'][$_GET['isbn']] = 1;
+    }
+} else {
+    echo "Pas de isbn <br>";
+    //ne pas ajouter de produit au panier
+}
+
+
+var_dump($_SESSION['panier']);
+
+?>
 </body>
 </html>
