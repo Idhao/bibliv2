@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 22 mai 2020 à 11:58
+-- Généré le : sam. 23 mai 2020 à 09:11
 -- Version du serveur :  8.0.19
 -- Version de PHP : 7.4.3
 
@@ -197,7 +197,7 @@ CREATE TABLE `Membre` (
   `valider` int NOT NULL DEFAULT '0',
   `nom` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `prenom` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `Membre`
@@ -205,8 +205,8 @@ CREATE TABLE `Membre` (
 
 INSERT INTO `Membre` (`id`, `nomUtilisateur`, `motDePasse`, `email`, `telephone`, `niveauAcces`, `valider`, `nom`, `prenom`) VALUES
 (1, 'Adrien_hue', '$2y$10$aIkwt5q9H8ofEZ05r2kEoO9L9OhGojN4FJAwTSe6t2C8KWrhhVVAi', 'adrien.houee1@gmail.com', '0649784070', 2, 0, 'HOUEE', 'Adrien'),
-(2, 'NKPortable', 'kevigauchet', 'kevigauchet@gmail.com', '0683435677', 1, 0, 'GAUCHET', 'Kevin'),
-(5, 'Adrien_hue', '$2y$10$iYBuu9KkQPo0w0GQ093adO/GAhMxYpKiu/gR.YMi/d4yza0NjVww2', '', '', 1, 0, '', '');
+(6, 'NKPortable', '$2y$10$hqQnkmZvUP9iQhet/g8ShO.8BRsxzcwB2rI08NlzTSfijW7aGi4fq', 'kevigauchet@gmail.com', '0683435677', 1, 0, 'GAUCHET', 'Kevin'),
+(11, 'BernardHOUEE', '$2y$10$i3MoCl2XnZM9FKTQQtZnrO6wdjg//hlNbvFWD9prcD7xAaGhw6sRO', 'bernard.houee@gmail.com', '0683435677', 1, 0, 'HOUEE', 'Bernard');
 
 -- --------------------------------------------------------
 
@@ -260,7 +260,7 @@ CREATE TABLE `Reservation` (
   `dateFin` datetime DEFAULT NULL,
   `retour` int NOT NULL DEFAULT '0',
   `jourRetard` int NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -375,7 +375,7 @@ ALTER TABLE `Langue`
 -- AUTO_INCREMENT pour la table `Membre`
 --
 ALTER TABLE `Membre`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `Personne`
