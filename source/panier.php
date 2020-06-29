@@ -52,7 +52,7 @@ if(isset($_GET['reserver']) && $_GET['reserver'] == true){
                 VALUES (?,?,?,?)
             ');
             $reservationQuery->execute(array($_SESSION['id'], $produit, $date, $dateFin));
-            var_dump($reservationQuery);
+            // var_dump($reservationQuery);
         }
     }
 }

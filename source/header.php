@@ -26,6 +26,7 @@
                     if(isset($_SESSION['id']) AND isset($_SESSION['username'])){
                         echo('<li><a href="panier.php">Mon panier</a></li>');
                         echo('<li><a href="deconnexion.php">Déconnexion</a></li>');
+                        echo('<li><a href="espacePerso.php">Mon compte</a></li>');
                     }
                     else{
                         echo('<li><a href="inscription.php">Connexion<br/>Inscription</a></li>');
