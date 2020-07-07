@@ -1,5 +1,4 @@
-<?php
-    include 'db.php'; // Connexion bdd
+<?php include '../includes/header.php';
     
     $isbn = $_GET['isbn'];
 
@@ -36,18 +35,16 @@
     $authorDetails = $authorQuery->fetchAll();
 ?>
 
-<?php include 'header.php' ?>
-
     <section>
         <article>
         <?php foreach($bookDetails as $info):?>
             <?php
-                $image="img/".$info['isbn'].".jpg";
+                $image="../img/".$info['isbn'].".jpg";
                 if(file_exists($image)){
                     echo '<img src="'.$image.'" alt="Couverture du livre">'; 
                 }
                 else{
-                    echo '<img src="img/default.jpg" alt="Couverture du livre">';
+                    echo '<img src="../img/default.jpg" alt="Couverture du livre">';
                 }
             ?>
             <h2><?= $info['titre']?></h2>

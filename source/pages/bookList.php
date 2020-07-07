@@ -1,5 +1,34 @@
-<?php include 'db.php';//connexion bdd
-if(isset($_GET['idAuthor'])){
+<?php include '../includes/header.php';
+
+if(isset($_GET['searchInfo']) && $_GET['searchInfo'] != NULL){
+    $searchQuery='
+            SELECT DISTINCT l.titre,
+            l.annee,
+            l.isbn,
+            p.nom, 
+            p.prenom, 
+            g.libelle AS Genre,
+            e.libelle AS Editeur
+            FROM Livre l
+            JOIN Auteur a
+                ON l.isbn = a.idLivre
+            JOIN Personne p
+                ON a.idPersonne = p.id
+            JOIN Genre g
+                ON l.genre = g.id
+            JOIN Editeur e
+                ON l.editeur = e.id
+            WHERE p.nom LIKE "%'.$_GET['searchInfo'].'%" 
+            OR p.prenom LIKE "%'.$_GET['searchInfo'].'%" 
+            OR e.libelle LIKE "%'.$_GET['searchInfo'].'%" 
+            OR g.libelle LIKE "%'.$_GET['searchInfo'].'%" 
+            OR l.titre LIKE "%'.$_GET['searchInfo'].'%";
+            ';
+    $searchQuery =$pdo->query($searchQuery);
+    $booksList = $searchQuery->fetchAll();
+    // var_dump($booksList);
+}
+else if(isset($_GET['idAuthor'])){
     $sortQuery =' 
             SELECT l.titre,
             l.annee,
@@ -52,21 +81,20 @@ else{
 
 ?>
 
-<?php include 'header.php' ?>
 
     <section>
-    
-    <aside><?php include 'chkBoxAuthor.php'?></aside>
+    <?php include '../includes/search.php'?>
+    <aside><?php include '../includes/chkBoxAuthor.php'?></aside>
     <?php foreach($booksList as $info): ?>
         <a href="bookDetails.php?isbn=<?= ($info['isbn'])?>">
         <article>
             <?php
-                $image="img/".$info['isbn'].".jpg";
+                $image="../img/".$info['isbn'].".jpg";
                 if(file_exists($image)){
                     echo '<img src="'.$image.'" alt="Couverture du livre">'; 
                 }
                 else{
-                    echo '<img src="img/default.jpg" alt="Couverture du livre">';
+                    echo '<img src="../img/default.jpg" alt="Couverture du livre">';
                 }
             ?>
             <h2><?= $info['titre']?></h2>

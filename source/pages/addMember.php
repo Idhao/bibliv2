@@ -1,5 +1,4 @@
-<?php
-    include 'db.php';
+<?php include '../includes/header.php';
 
     $lastName = $_POST['lastName'];
     $firstName = $_POST['firstName'];
@@ -20,7 +19,6 @@
     $insertMemberQuery->execute(array($username, $motDePasse, $email, $telephone, $firstName, $lastName));
     // var_dump($insertMemberQuery);
     
-    include 'header.php';
 ?>
 
     <p>Merci de votre inscritpion !</p>

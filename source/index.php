@@ -1,4 +1,4 @@
-<?php include 'db.php';//connexion bdd
+<?php include 'includes/header.php';
  
  $query =' 
          SELECT l.titre,
@@ -23,7 +23,7 @@
  //print_r($booksList);
 ?>
 
-<?php include 'header.php'?>
+
     <section>
     
         <article><!-- Petite présentation de qui sommes nous -->
